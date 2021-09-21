@@ -1,0 +1,17 @@
+<div class="text-center">
+    <h1>TODO LIST UPDATE ACTIVITIES</h1><br><br>
+</div>
+<div class="container">
+<form [formGroup]="upddate" (ngSubmit)="updatefn(upddate)">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="title">
+    </div>
+    <br><br>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="textarea"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

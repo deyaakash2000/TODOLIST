@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h1>LOGIN</h1>
+</div>
+<div class="container">
+<form [formGroup]="login" (ngSubmit)="loginsubmit(login)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Phone no</label>
+    <input type="number" class="form-control" formControlName="phone">
+    <span *ngIf="login.get('phone').invalid && submit">Enter phone No</span>
+  </div>
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+        <span *ngIf="login.get('password').invalid && submit">Enter password</span>
+      </div>
+    <button type="submit" class="btn btn-warning m-3">Submit</button>
+    <br><br>
+  </div>
+</form>
+<a routerLink="register">Creat Account</a><br><br>
+<!-- <a routerLink="update">reset password</a> -->

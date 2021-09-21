@@ -1,0 +1,27 @@
+<div class="text-center">Registation</div>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="regs(form)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <span *ngIf="form.get('name').invalid && submit">Enter name</span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Phone no</label>
+      <input type="number" class="form-control" formControlName="phone">
+      <span *ngIf="form.get('phone').invalid && submit">Enter phone</span>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password">
+      <span *ngIf="form.get('password').invalid && submit">Enter password</span>
+    </div>
+    <select formControlName="city">
+      <option value="">Select your city</option>
+      <option *ngFor="let city of cities" value="{{city.id}}">{{city.name}}</option>
+    </select>
+    <br><br>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+    <a class="btn btn-warning m-3" routerLink="/">Login</a>
+  </form>
+</div>

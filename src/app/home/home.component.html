@@ -1,0 +1,43 @@
+<div class="text-center">
+    <h1>TODO LIST</h1><br><br>
+ 
+</div>
+<div class="container">
+<form [formGroup]="adddetails" (ngSubmit)="addfn(adddetails)">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="title">
+    </div>
+    <br><br>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="textarea"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<!-- <form [formGroup]="refresh" (ngSubmit)="ree(refresh)">
+<a class="btn btn-warning m-3" type="submit">Refresh</a>
+</form> -->
+<button type="submit" class="btn btn-warning m-3" (click)="refresh()">Refresh</button>
+<!-- SHOW ALL ACTIVITIES -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of details let i = index">
+      <td>{{post.title}}</td>
+      <td>{{post.description}}</td>
+      <td><a class="btn btn-warning m-3" routerLink="/update/{{post.id}}">Update</a></td>
+      <td><a class="btn btn-danger m-3" routerLink="/delete/{{post.id}}">Delete</a></td>
+    </tr>
+  </tbody>
+
+</table>
